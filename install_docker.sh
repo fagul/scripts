@@ -10,5 +10,5 @@ sudo apt-get -y update
 # restart Apache
 #apachectl restart
 
-#Install Docker
-wget -qO- https://get.docker.com/ | sh
+#Run Docker
+sudo docker run preetick/mthello:1.1
