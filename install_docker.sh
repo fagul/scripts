@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get -y update
+apt-get -y update
 
 # install Apache2
 #apt-get -y install apache2 
@@ -11,4 +11,4 @@ sudo apt-get -y update
 #apachectl restart
 
 #Run Docker
-sudo docker run preetick/mthello:1.1
+docker run preetick/mthello:1.1
