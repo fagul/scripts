@@ -1,14 +1,10 @@
 #!/bin/bash
 apt-get -y update
 
-# install Apache2
-#apt-get -y install apache2 
-
-# write some HTML
-#echo \<center\>\<h1\>My Demo App\</h1\>\<br/\>\</center\> > /var/www/html/demo.html
-
-# restart Apache
-#apachectl restart
+#Install docker
+apt-get -y docker.io
+ 
+source /etc/bash_completion.d/docker.io
 
 #Run Docker
-docker run preetick/mthello:1.1
+docker run --name hello -d -p 8080:8080 preetick/mthello:1.1
