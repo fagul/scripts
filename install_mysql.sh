@@ -16,11 +16,7 @@ sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my
 
 sudo service mysql restart
 
-echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';" >permis.sql
-echo "flush privileges;" >>permis.sql
-echo "exit"
-
-mysql <permis.sql
+echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'welcome123'; flush privileges;" | mysql 
 
 
 echo "create database testdb" | mysql -u root -pwelcome123
