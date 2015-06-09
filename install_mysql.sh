@@ -19,4 +19,4 @@ sudo service mysql restart
 echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'welcome123'; flush privileges;" | mysql -u root -pwelcome123
 
 
-echo "create database testdb" | mysql -u root -pwelcome123
+echo "create database VehicleRental" | mysql -u root -pwelcome123
