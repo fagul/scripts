@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get -y update
+apt-get update
 
 # set up a silent install of MySQL
 
