@@ -14,19 +14,8 @@ apt-get -y install mysql-server
 
 sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 
-if [ ! -f /var/lib/mysql/ibdata1 ]; then
+sudo service mysql restart
 
-	mysql_install_db
+echo "GRANT ALL ON *.* TO root@'%' IDENTIFIED BY 'welcome123' WITH GRANT OPTION; FLUSH PRIVILEGES" | mysql
 
-	/usr/bin/mysqld_safe &
-	sleep 10s
-
-	echo "GRANT ALL ON *.* TO root@'%' IDENTIFIED BY 'welcome123' WITH GRANT OPTION; FLUSH PRIVILEGES" | mysql
-
-	killall mysqld
-	sleep 10s
-fi
-
-/usr/bin/mysqld_safe
-
-echo "create database databasename" | mysql -u root -pwelcome123
+echo "create database testdb" | mysql -u root -pwelcome123
